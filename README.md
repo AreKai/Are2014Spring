@@ -22,6 +22,7 @@ are
 | naotaco |  ○  |  ○  |  ▲  |  ▲  |  ○  |
 | 1Vq9    |  x   | ○    |  ○  |  ○  |    ○ |
 | zakuni  |      |      |      |     |     |
+| zakuni  |  ×   | ○    |  △  |  ×  |  ×  |
 | akix    |      |      |      |     |     |
 | ymrl    |  △  | ○    |  ○  |  ○  |  ○  |
 | nunnun  |      |      |      |     |     |
