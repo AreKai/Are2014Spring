@@ -9,3 +9,4 @@ are
 - @naotaco
 - @1VQ9
 - @zakuni
+- @akix(日程があえば)
