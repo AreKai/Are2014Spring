@@ -13,6 +13,7 @@ are
 - @ymrl
 - @nunnun (日程が合えば)
 - @kanny
+- @TakumiBaba
 
 ### 日程
 
@@ -25,3 +26,4 @@ are
 | ymrl    |  △  | ○    |  ○  |  ○  |  ○  |
 | nunnun  |      |      |      |     |     |
 | kanny   |  x  | ○    |  ○  |  ○  |  x  |
+| baba    |  x   |  ○  |   △  | ○  |  ○ |　 
