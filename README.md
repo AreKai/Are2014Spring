@@ -14,6 +14,7 @@ are
 - @nunnun (日程が合えば)
 - @kanny
 - @TakumiBaba
+- @kurokobo (日程が合えば)
 
 ### 日程
 
@@ -27,6 +28,7 @@ are
 | nunnun  |      |      |      |     |     |
 | kanny   |  x  | ○    |  ○  |  ○  |  x  |
 | baba    |  x   |  ○  |   △  | ○  |  ○ |　 
+| kurokobo |      |      |      |     |     |
 
 
 ### 場所候補
