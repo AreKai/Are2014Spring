@@ -15,6 +15,7 @@ are
 - @kanny
 - @TakumiBaba
 - @kurokobo (日程が合えば)
+- @shokai
 
 ### 日程
 
@@ -27,8 +28,9 @@ are
 | ymrl    |  △  | ○    |  ○  |  ○  |  ○  |
 | nunnun  |      |      |      |     |     |
 | kanny   |  x  | ○    |  ○  |  ○  |  x  |
-| baba    |  x   |  ○  |   △  | ○  |  ○ |　 
+| baba    |  x   |  ○  |   △  | ○  |  ○ |
 | kurokobo |      |      |      |     |     |
+| shokai | ◯ | ◯ | ◯ | ◯ | ◯ |
 
 
 ### 場所候補
