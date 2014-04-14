@@ -10,3 +10,4 @@ are
 - @1VQ9
 - @zakuni
 - @akix(日程があえば)
+- @ymrl
