@@ -16,7 +16,7 @@ def check(table)
       rows.each do |row|
         if row.children[column].children
           if row.children[column].children.size == 0 ||
-             !!!row.children[column].children.first.value.match(/\u25CB/)
+             !!!row.children[column].children.first.value.match(/[\u25CB\u25EF]/)
             can_all_arekai_attendees_attend_this_date = false
           end
         end
