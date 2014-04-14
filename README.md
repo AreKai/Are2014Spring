@@ -5,6 +5,6 @@ are
 
 ### 参加
 
-@naotaco
-@1VQ9
+- @naotaco
+- @1VQ9
 
