@@ -12,6 +12,7 @@ are
 - @akix(日程があえば)
 - @ymrl
 - @nunnun (日程が合えば)
+- @kanny
 
 ### 日程
 
@@ -21,5 +22,6 @@ are
 | 1Vq9    |  x   | ○    |  ○  |  ○  |    ○ |
 | zakuni  |      |      |      |     |     |
 | akix    |      |      |      |     |     |
-| ymrl    |  △  | ○    |  ○  |  ○  |    ○|
+| ymrl    |  △  | ○    |  ○  |  ○  |  ○  |
 | nunnun  |      |      |      |     |     |
+| kanny   |  x  | ○    |  ○  |  ○  |  x  |
