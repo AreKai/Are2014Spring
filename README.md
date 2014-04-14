@@ -11,6 +11,7 @@ are
 - @zakuni
 - @akix(日程があえば)
 - @ymrl
+- @nunnun (日程が合えば)
 
 ### 日程
 
