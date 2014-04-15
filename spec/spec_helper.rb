@@ -8,23 +8,35 @@ def schedule_table
 end
 
 def check(table)
-  exist_a_day_which_all_attendees_can_attend_arekai = false
-  rows = table.children.select { |e| e.type == :tbody }.first.children
-  rows.first.children.size.times do |column|
-    can_all_arekai_attendees_attend_this_date = true
-    if column > 0
-      rows.each do |row|
-        if row.children[column].children
-          if row.children[column].children.size == 0 ||
-             !!!row.children[column].children.first.value.match(/[\u25CB\u25EF]/)
-            can_all_arekai_attendees_attend_this_date = false
-          end
-        end
-      end
-      if can_all_arekai_attendees_attend_this_date
-        exist_a_day_which_all_attendees_can_attend_arekai = true
-      end
+  ## extract text in cell
+  dates = table.children.select{|e|
+    e.type == :thead
+  }.first.children[0].children.map{|i|
+    i.children[0].value rescue nil
+  }
+
+  rows = table.children.select{|e|
+    e.type == :tbody
+  }.first.children.map{|row|
+    row.children.map{|i|
+      i.children[0].value.strip rescue nil
+    }
+  }
+
+  ## flip rows -> cols
+  cols = []
+  while !rows[0].empty?
+    cols.push []
+    rows.each do |row|
+      cols.last.push row.shift
     end
   end
-  exist_a_day_which_all_attendees_can_attend_arekai
+
+  ## attendance rate
+  attend_rates = cols.map do |col|
+    col.count{|i| i =~ /[\u25CB\u25EF]/ }.to_f / col.size
+  end
+
+  ## all attendees can attend
+  attend_rates.count{|i| i >= 1.0 } > 0
 end
