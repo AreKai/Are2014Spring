@@ -26,7 +26,7 @@ are
 | zakuni  |  ×   | ○    |  △  |  ×  |  ×  |
 | akix    |      |      |      |     |     |
 | ymrl    |  △  | ○    |  ○  |  ○  |  ○  |
-| nunnun  |      |      |      |     |     |
+| nunnun  |  ×   |  ×  |  △  |  ○ |   ○|
 | kanny   |  x  | ○    |  ○  |  ○  |  x  |
 | baba    |  x   |  ○  |   △  | ○  |  ○ |
 | kurokobo |      |      |      |     |     |
