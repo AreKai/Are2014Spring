@@ -36,3 +36,4 @@ are
 ### 場所候補
 
 - [バルバッコア](http://www.barbacoa.jp/)
+- [ホルモン稲田](http://www.kuroge-wagyu.com/hi/)
