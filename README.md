@@ -16,6 +16,7 @@ are
 - @TakumiBaba
 - @kurokobo (日程が合えば)
 - @shokai
+- @ohnishiakira
 
 ### 日程
 
@@ -31,7 +32,7 @@ are
 | baba    |  x   |  ○  |   △  | ○  |  ○ |
 | kurokobo |      |      |      |     |     |
 | shokai | ◯ | ◯ | ◯ | ◯ | ◯ |
-
+| ohnishiakira | ◯ | ◯ | ◯ | ◯ | ◯ |
 
 ### 場所候補
 
