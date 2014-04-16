@@ -23,8 +23,11 @@ def entrants
 end
 
 def names_in_table
-  schedule_table.children.select{|e|e.type == :tbody}.first.children.map{|row|
-    row.children.first.children.first.value rescue nil
+  schedule_table.children.select{|e|e.type==:tbody}.first.children.select{|row|
+    # 名前を除いたカラムを取り出し、さらにその中から空欄になっているカラムを取り出している
+    row.children[1..-1].select{|cell| cell.children.length == 0}.length == 0
+  }.map{|row|
+    row.children.first.children.first.value
   }
 end
 
