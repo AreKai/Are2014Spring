@@ -1,77 +1,85 @@
 require "kramdown"
 
-def document
-  src = File.read("README.md")
-  Kramdown::Document.new(src)
-end
-
-def schedule_table
-  document.root.children.select do |elm|
-    elm.type == :table
-  end.first
-end
-
-def entrants
-  header = nil
-  document.root.children.each do |elm|
-    header = elm if elm.type == :header && elm.children.first.value == '参加'
-    if header && elm.type == :ul
-      return elm.children.map{|e| e.children.first.children.first.value.gsub(/^@([a-zA-Z0-9]+).*$/){$1}}
-    end
+class AreScheduler
+  def initialize(markdown="README.md")
+    @document = Kramdown::Document.new File.read markdown
   end
-  nil
-end
 
-def names_in_table
-  schedule_table.children.select{|e|e.type==:tbody}.first.children.select{|row|
-    # 名前を除いたカラムを取り出し、さらにその中から空欄になっているカラムを取り出している
-    row.children[1..-1].select{|cell| cell.children.length == 0}.length == 0
-  }.map{|row|
-    row.children.first.children.first.value
-  }
-end
-
-def place_candidates
-  header = nil
-  document.root.children.each do |elm|
-    header = elm if elm.type == :header && elm.children.first.value == '場所候補'
-    if header && elm.type == :ul
-      return elm.children
-    end
+  def schedule_table
+    @schedule_table ||= @document.root.children.select{|elm| elm.type == :table }.first
   end
-  nil
-end
 
+  def candidates
+    @candidates ||= schedule_table.children.select{|e|
+      e.type == :thead
+    }.first.children[0].children.map{|i|
+      i.children[0]
+    }.compact.map(&:value)
+  end
 
+  def entrants
+    header = nil
 
-def attend_rates(table)
-  ## extract text in cell
-  dates = table.children.select{|e|
-    e.type == :thead
-  }.first.children[0].children.map{|i|
-    i.children[0].value rescue nil
-  }
+    @document.root.children.each do |elm|
+      header = elm if elm.type == :header && elm.children.first.value == '参加'
+      if header && elm.type == :ul
+        return elm.children.map{|e| e.children.first.children.first.value.gsub(/^@([a-zA-Z0-9]+).*$/){$1}}
+      end
+    end
 
-  rows = table.children.select{|e|
-    e.type == :tbody
-  }.first.children.map{|row|
-    row.children.map{|i|
-      i.children[0].value.strip rescue nil
+    nil
+  end
+
+  def attendants
+    tbody = schedule_table.children.select{|e|e.type==:tbody}.first
+    tbody.children.select{|row|
+      # 名前を除いたカラムを取り出し、さらにその中から空欄になっているカラムを取り出している
+      row.children[1..-1].select{|cell| cell.children.length == 0}.length == 0
+    }.map{|row|
+      name = row.children.first.children.first.value
+      _candidates = row.children[1..-1].map{|cell| /[\u25CB\u25EF]/ === cell.children.first.value}
+      _candidates = candidates.values_at *_candidates.each_with_index.map{|a,i| a ? i : nil}.compact
+
+      {name => _candidates}
     }
-  }
+  end
 
-  ## flip rows -> cols
-  cols = []
-  until rows[0].empty?
-    cols.push []
-    rows.each do |row|
-      cols.last.push row.shift
+  def names_in_table
+    attendants.map(&:keys).flatten
+  end
+
+  def place_candidates
+    header = nil
+    @document.root.children.each do |elm|
+      header = elm if elm.type == :header && elm.children.first.value == '場所候補'
+      if header && elm.type == :ul
+        return elm.children
+      end
     end
+    nil
   end
 
-  ## attendance rate
-  attendance_rates = cols.map do |col|
-    [dates.shift, col.count { |i| i =~ /[\u25CB\u25EF]/ }.to_f / col.size]
+  def attend_rates
+    result = attendants.each_with_object(Hash.new(0)){|attendant, res|
+      attendant.values.flatten.each{|c|
+        res[c] += 1
+      }
+    }
+
+    attend_count = entrants.count
+
+    Hash[result.map{|date, count| [date, Rational(count, attend_count).to_f]}]
   end
-  Hash[attendance_rates]
+
+  def only_in_entrants
+    entrants - names_in_table
+  end
+
+  def only_in_schedule_table
+    names_in_table - entrants
+  end
+end
+
+def are_scheduler
+  @are_scheduler ||= AreScheduler.new
 end
