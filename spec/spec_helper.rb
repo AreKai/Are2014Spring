@@ -1,11 +1,45 @@
 require "kramdown"
 
-def schedule_table
+def document
   src = File.read("README.md")
-  Kramdown::Document.new(src).root.children.select do |elm|
+  Kramdown::Document.new(src)
+end
+
+def schedule_table
+  document.root.children.select do |elm|
     elm.type == :table
   end.first
 end
+
+def entrants
+  header = nil
+  document.root.children.each do |elm|
+    header = elm if elm.type == :header && elm.children.first.value == '参加'
+    if header && elm.type == :ul
+      return elm.children.map{|e| e.children.first.children.first.value.gsub(/^@([a-zA-Z0-9]+).*$/){$1}}
+    end
+  end
+  nil
+end
+
+def names_in_table
+  schedule_table.children.select{|e|e.type == :tbody}.first.children.map{|row|
+    row.children.first.children.first.value rescue nil
+  }
+end
+
+def place_candidates
+  header = nil
+  document.root.children.each do |elm|
+    header = elm if elm.type == :header && elm.children.first.value == '場所候補'
+    if header && elm.type == :ul
+      return elm.children
+    end
+  end
+  nil
+end
+
+
 
 def attend_rates(table)
   ## extract text in cell
