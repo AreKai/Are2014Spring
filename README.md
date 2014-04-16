@@ -40,3 +40,4 @@ are
 - [ホルモン稲田](http://www.kuroge-wagyu.com/hi/)
 - [かずすけ](http://tabelog.com/kanagawa/A1404/A140405/14018634/)
 - [上海小吃](http://shanghai-xiaochi.com/)
+- [4番サード魚真](http://tabelog.com/tokyo/A1303/A130301/13001785/)
