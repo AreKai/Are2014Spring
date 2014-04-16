@@ -39,3 +39,4 @@ are
 - [バルバッコア](http://www.barbacoa.jp/)
 - [ホルモン稲田](http://www.kuroge-wagyu.com/hi/)
 - [かずすけ](http://tabelog.com/kanagawa/A1404/A140405/14018634/)
+- [上海小吃](http://shanghai-xiaochi.com/)
