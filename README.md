@@ -17,6 +17,7 @@ are
 - @kurokobo (日程が合えば)
 - @shokai
 - @ohnishiakira
+- @myatsumoto
 
 ### 日程
 
@@ -33,6 +34,7 @@ are
 | kurokobo     |      |      |      |     |     |
 | shokai       | ◯ | ◯ | ◯ | ◯ | ◯ |
 | ohnishiakira | ◯ | ◯ | ◯ | ◯ | ◯ |
+| myatsumoto   |  ×   |  ×  |  ○  |  ○ |   ○|
 
 ### 場所候補
 
