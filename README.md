@@ -31,7 +31,7 @@ are
 | nunnun       |  ×   |  ×  |  △  |  ○ |   ○|
 | kanny        |  x  | ○    |  ○  |  ○  |  x  |
 | TakumiBaba   |  x   |  ○  |   △  | ○  |  ○ |
-| kurokobo     |      |      |      |     |     |
+| kurokobo     |  △  |  ×  |  △  |  ×  |  △  |
 | shokai       | ◯ | ◯ | ◯ | ◯ | ◯ |
 | ohnishiakira | ◯ | ◯ | ◯ | ◯ | ◯ |
 | myatsumoto   |  ×   |  ×  |  ○  |  ○ |   ○|
