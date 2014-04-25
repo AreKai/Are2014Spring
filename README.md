@@ -30,7 +30,7 @@ are
 | zakuni       |  ×   | ○    |  △  |  ×  |  ×  |
 | akix         |  ×   | ○    |  ◯   |  ○  |  ○   |
 | ymrl         |  △  | ○    |  ○  |  ○  |  ○  |
-| nunnun       |  ×   |  ×  |  △  |  ○ |   ○|
+| nunnun       |  ×   |  ×  |  × |  ○ |   ○|
 | kanny        |  x  | ○    |  ○  |  ○  |  x  |
 | TakumiBaba   |  x   |  ○  |   △  | ○  |  ○ |
 | kurokobo     |  △  |  ×  |  △  |  ×  |  △  |
