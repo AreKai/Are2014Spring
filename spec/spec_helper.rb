@@ -9,6 +9,32 @@ class AreScheduler
     @schedule_table ||= @document.root.children.select{|elm| elm.type == :table }.first
   end
 
+
+  def decided_date
+    header = nil
+    @document.root.children.each do |elm|
+      header = elm if elm.type ==:header && elm.children.first.value == '日程'
+      if header
+        strong = elm.children.find{|e|e.type==:strong}
+        next unless strong
+        return strong.children.first.value.gsub(/\!/,'')
+      end
+    end
+  end
+
+  def decided_place
+    header = nil
+    @document.root.children.each do |elm|
+      header = elm if elm.type ==:header && elm.children.first.value == '場所候補'
+      if header
+        strong = elm.children.find{|e|e.type==:strong}
+        next unless strong
+        return strong.children.first.value.gsub(/\!/,'')
+      end
+    end
+  end
+
+
   def candidates
     @candidates ||= schedule_table.children.select{|e|
       e.type == :thead
@@ -69,6 +95,10 @@ class AreScheduler
     attend_count = entrants.count
 
     Hash[result.map{|date, count| [date, Rational(count, attend_count).to_f]}]
+  end
+
+  def attendances_on_date date
+    attendants.select{|e| e.values.flatten.include? date }.map{|e| e.keys.first}
   end
 
   def only_in_entrants
