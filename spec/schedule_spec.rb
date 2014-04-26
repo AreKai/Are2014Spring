@@ -12,6 +12,7 @@ describe "アレ会のスケジュール" do
 
   it 'should 日程は4人以上集まれる' do
     date = are_scheduler.decided_date
+    expect(date).not_to eq(nil), "日程が決まっていない"
     expect(date && are_scheduler.attendances_on_date(date)).to have_at_least(4).people
   end
 

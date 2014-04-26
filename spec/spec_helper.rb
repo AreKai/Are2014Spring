@@ -1,8 +1,11 @@
 require "kramdown"
+require "nokogiri"
 
 class AreScheduler
   def initialize(markdown="README.md")
     @document = Kramdown::Document.new File.read markdown
+    @html = @document.to_html
+    @dom = Nokogiri.parse "<body>#{@html}</body>"
   end
 
   def schedule_table
@@ -11,27 +14,19 @@ class AreScheduler
 
 
   def decided_date
-    header = nil
-    @document.root.children.each do |elm|
-      header = elm if elm.type ==:header && elm.children.first.value == '日程'
-      if header
-        strong = elm.children.find{|e|e.type==:strong}
-        next unless strong
-        return strong.children.first.value.gsub(/\!/,'')
-      end
+    reg = Regexp.new '日程\s*[:：]\s*(\d+/\d+)'
+    unless li = @dom.xpath('//li').find{|i| i.text =~ reg}
+      return
     end
+    li.text.scan(reg)[0][0]
   end
 
   def decided_place
-    header = nil
-    @document.root.children.each do |elm|
-      header = elm if elm.type ==:header && elm.children.first.value == '場所候補'
-      if header
-        strong = elm.children.find{|e|e.type==:strong}
-        next unless strong
-        return strong.children.first.value.gsub(/\!/,'')
-      end
+    reg = Regexp.new '場所\s*[:：]\s*(.+)'
+    unless li = @dom.xpath('//li').find{|i| i.text =~ reg}
+      return
     end
+    li.text.scan(reg)[0][0]
   end
 
 

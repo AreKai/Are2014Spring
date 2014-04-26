@@ -3,8 +3,8 @@ Are2014Spring (#0x0e)
 [![Build Status](https://travis-ci.org/AreKai/Are2014Spring.svg?branch=master)](https://travis-ci.org/AreKai/Are2014Spring)
 
 - are
-- 4/28 21:00~
-- [ホルモン稲田](http://www.kuroge-wagyu.com/hi/)
+- 日程：4/28 21:00~
+- 場所：[ホルモン稲田](http://www.kuroge-wagyu.com/hi/)
 
 ### 参加
 
