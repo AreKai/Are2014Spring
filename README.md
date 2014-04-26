@@ -2,7 +2,9 @@ Are2014Spring (#0x0e)
 =============
 [![Build Status](https://travis-ci.org/AreKai/Are2014Spring.svg?branch=master)](https://travis-ci.org/AreKai/Are2014Spring)
 
-are
+- are
+- 4/28 21:00~
+- [ホルモン稲田](http://www.kuroge-wagyu.com/hi/)
 
 ### 参加
 
@@ -19,9 +21,7 @@ are
 - @ohnishiakira
 - @myatsumoto
 
-### 日程
-
-**!!!4/28!!!**
+### 日程調整
 
 |              | 4/19 | 4/26 | 4/28 | 5/7 | 5/10|
 |--------------|------|------|------|-----|-----|
@@ -39,8 +39,6 @@ are
 | myatsumoto   |  ×   |  ×  |  ○  |  ○ |   ○|
 
 ### 場所候補
-
-**!!!21:00から稲田に決定!!!**
 
 - [バルバッコア](http://www.barbacoa.jp/)
 - [ホルモン稲田](http://www.kuroge-wagyu.com/hi/)
